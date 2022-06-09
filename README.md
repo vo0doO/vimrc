@@ -1,66 +1,67 @@
 ![VIM](https://dnp4pehkvoo6n.cloudfront.net/43c5af597bd5c1a64eb1829f011c208f/as/Ultimate%20Vimrc.svg)
 
-# The Ultimate vimrc
+# Окончательный vimrc
 
-Over the last 10 years, I have used and tweaked Vim. This configuration is the ultimate vimrc (or at least my version of it).
+За последние 10 лет я использовал и настраивал Vim. Эта конфигурация является конечной vimrc (или, по крайней мере, моей версией).
 
-There are two versions:
+Есть две версии:
 
-* **The Basic**: If you want something small just copy [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) into your ~/.vimrc and you will have a good basic setup
-* **The Awesome**: Includes a ton of useful plugins, color schemes, and configurations
+* **Основной**: если вам нужно что-то маленькое, просто скопируйте [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) в ваш ~/.vimrc и у вас будет хорошая базовая настройка
+* **The Awesome**: Включает массу полезных плагинов, цветовых схем и конфигураций.
 
-I would, of course, recommend using the awesome version.
+Я бы, конечно, рекомендовал использовать потрясающую версию.
 
 
-## How to install the Awesome version?
-### Install for your own user only
-The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following from your terminal:
+## Как установить версию Awesome?
+### Установить только для своего пользователя
+Удивительная версия включает в себя множество отличных плагинов, конфигураций и цветовых схем, которые делают Vim намного лучше. Чтобы установить его, просто выполните следующие действия в своем терминале:
 
 	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
 	
-### Install for multiple users
-To install for multiple users, the repository needs to be cloned to a location accessible for all the intended users.
+### Установить для нескольких пользователей
+Чтобы установить для нескольких пользователей, репозиторий необходимо клонировать в место, доступное для всех предполагаемых пользователей.
 
 	git clone --depth=1 https://github.com/amix/vimrc.git /opt/vim_runtime
 	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
 	# to install for all users with home directories
 	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
 	
-Naturally, `/opt/vim_runtime` can be any directory, as long as all the users specified have read access.
+Естественно, `/opt/vim_runtime` can be any directory, as long as all the users specified have read access.
 
-## Fonts
+## Шрифты
 
-I recommend using [IBM Plex Mono font](https://github.com/IBM/plex) (it's an open-source and awesome font that can make your code look beautiful). The Awesome vimrc is already setup to try to use it.
+я рекомендую использовать
+(это потрясающий шрифт с открытым исходным кодом, который может сделать ваш код красивым). Awesome vimrc уже настроен, чтобы попытаться его использовать. [IBM Plex Mono font](https://github.com/IBM/plex) 
 
-Some other fonts that Awesome will try to use:
+Некоторые другие шрифты, которые Awesome попытается использовать:
 
 * [Hack](http://sourcefoundry.org/hack/)
 * [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/)
 
-## How to install the Basic version?
+## Как установить Базовую версию?
 
-The basic version is just one file and no plugins. Just copy [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) and paste it into your vimrc.
+Базовая версия — это всего лишь один файл и никаких плагинов. Просто скопируйте [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) и вставьте его в свой vimrc.
 
-The basic version is useful to install on remote servers where you don't need many plugins, and you don't do many edits.
+Базовую версию удобно устанавливать на удаленных серверах, где вам не нужно много плагинов и вы не вносите много правок..
 
 	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 
 
-## How to install on Windows?
+## Как установить на Windows?
 
-Use [gitforwindows](http://gitforwindows.org/) to checkout the repository and run the installation instructions above. No special instructions needed ;-)
-
-
-## How to install on Linux
-
-If you have vim aliased as `vi` instead of `vim`, make sure to either alias it: `alias vi=vim`. Otherwise, `apt-get install vim`
+Использовать [gitforwindows](http://gitforwindows.org/) чтобы проверить репозиторий и выполнить приведенные выше инструкции по установке. Никаких специальных инструкций не требуется ;-)
 
 
-## How to update to latest version?
+## Как установить на линукс
 
-Just do a git rebase!
+Если у вас есть псевдоним vim как `vi` вместо `vim`, убедитесь, что вы используете псевдоним: `alias vi=vim`. В противном случае, `apt-get install vim`
+
+
+## Как обновить до последней версии?
+
+Просто сделайте git rebase!
 
     cd ~/.vim_runtime
     git reset --hard
@@ -68,14 +69,13 @@ Just do a git rebase!
     git pull --rebase
     python update_plugins.py  # use python3 if python is unavailable
 
-NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must first install the `requests` python module using `pip`, `pip3`, or `easy_install`.
+ПРИМЕЧАНИЕ. Если вы получаете «ModuleNotFoundError: нет модуля с именем «запросы», вы должны сначала установить модуль Python «запросы», используя «pip», «pip3» или «easy_install».
 
     pip install requests
 
-## Some screenshots
+## Некоторые скриншоты
 
-Colors when editing a Python file:
-
+Цвета при редактировании файла Python:
 ![Screenshot 1](https://dnp4pehkvoo6n.cloudfront.net/07583008e4da885801657e8781777844/as/Python%20editing.png)
 
 [NERD Tree](https://github.com/preservim/nerdtree) plugin in a terminal window:
@@ -85,10 +85,9 @@ Distraction free mode using [goyo.vim](https://github.com/junegunn/goyo.vim) and
 ![Screenshot 4](https://dnp4pehkvoo6n.cloudfront.net/f0dcc4c9739148c56cbf8285a910ac41/as/Zen%20mode.png)
 
 
-## Included Plugins
+## Включенные плагины
 
-I recommend reading the docs of these plugins to understand them better. Each plugin provides a much better Vim experience!
-
+Я рекомендую прочитать документы этих плагинов, чтобы лучше понять их. Каждый плагин обеспечивает гораздо лучший опыт работы с Vim!
 * [ack.vim](https://github.com/mileszs/ack.vim): Vim plugin for `the_silver_searcher` (ag) or ack -- a wicked fast grep
 * [bufexplorer.zip](https://github.com/vim-scripts/bufexplorer.zip): Quickly and easily switch between buffers. This plugin can be opened with `<leader+o>`
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Fuzzy file, buffer, mru and tag finder. It's mapped to `<Ctrl+F>`
